@@ -1,0 +1,53 @@
+h1,
+h2,
+h3 {
+  @include font-size(m-large);
+  @include font-weight(bold);
+  @include font-family(montserrat);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  text-transform: capitalize;
+  color: color(black);
+
+  @include respond(small) {
+    @include font-size(x-large);
+  }
+}
+
+h4,
+h5,
+h6 {
+  @include font-size(regular);
+  @include font-weight(semi-bold);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: color(dark);
+
+  @include respond(large) {
+    @include font-size(medium);
+    margin-bottom: 2rem;
+  }
+}
+
+p,
+li,
+a {
+  @include font-weight(regular);
+  @include font-size(regular);
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+  color: color(dark);
+}
+
+p {
+  margin-bottom: 1rem;
+
+  @include respond(large) {
+    @include font-size(medium);
+  }
+}
+
+ul {
+  list-style: none;
+}
