@@ -19,6 +19,7 @@ h5,
 h6 {
   @include font-size(regular);
   @include font-weight(semi-bold);
+  @include font-family(montserrat);
   margin-bottom: 1.5rem;
   line-height: 1.2;
   text-transform: uppercase;

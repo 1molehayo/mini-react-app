@@ -10,7 +10,7 @@ export default function CardList({ data, type }) {
       <div className="row">
         {data &&
           data.map((item, index) => (
-            <div className="col-md-6" key={index}>
+            <div className="col-md-6 mb-4" key={index}>
               <div className="card">
                 <div className="card__image">
                   <img src="" alt="" />
@@ -27,7 +27,7 @@ export default function CardList({ data, type }) {
                     </p>
 
                     {type === "users" && item?.type === "access_guest" && (
-                      <p>
+                      <p className="font-semi-bold">
                         {formatDateRange(
                           item?.attributes.starts_at,
                           item?.attributes.ends_at
@@ -39,6 +39,7 @@ export default function CardList({ data, type }) {
                   {type === "devices" && (
                     <div className="card__row">
                       <ToggleSwitch
+                        id={item.id}
                         isActive={item?.attributes.state === "locked"}
                       />
 
