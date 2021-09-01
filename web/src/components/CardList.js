@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { ToggleSwitch } from "./ToggleSwitch";
+import ToggleSwitch from "./ToggleSwitch";
 import { formatDateRange } from "utility";
 import classnames from "classnames";
 

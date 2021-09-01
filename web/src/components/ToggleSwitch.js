@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-export const ToggleSwitch = ({ id, isActive }) => {
+export default function ToggleSwitch({ id, isActive }) {
   const [open, setOpen] = useState(isActive);
   const toggleCheckbox = () => setOpen((prevState) => !prevState);
 
@@ -16,7 +16,7 @@ export const ToggleSwitch = ({ id, isActive }) => {
       <label htmlFor={`switch-${id}`}>Toggle</label>
     </div>
   );
-};
+}
 
 ToggleSwitch.propTypes = {
   isActive: PropTypes.bool,

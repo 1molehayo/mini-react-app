@@ -1,24 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { ANIMATION_DEFAULTS } from "utility/constants";
 import CardList from "components/CardList";
+import useFetch from "services/useFetch";
+import { Error, Loader } from "components";
 
 const Devices = () => {
-  const [deviceList, setDeviceList] = useState();
-
-  const loadDevices = async () => {
-    try {
-      const res = await fetch("http://localhost:4000/api/devices.json");
-      const data = await res.json();
-      setDeviceList(data.data);
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
-  useEffect(() => {
-    loadDevices();
-  }, []);
+  const { status, data, error } = useFetch("devices.json");
 
   return (
     <motion.section
@@ -28,18 +16,24 @@ const Devices = () => {
       variants={ANIMATION_DEFAULTS.pageTransition}
       transition={ANIMATION_DEFAULTS.duration}
     >
-      <div className="section">
-        <div className="container">
-          {deviceList && (
-            <p className="text-center">
-              There are{" "}
-              <span className="font-bold">{deviceList.length || 0}</span>{" "}
-              devices on this page
-            </p>
-          )}
+      {/* {status === "fetching" && <Loader />} */}
+      <Loader />
 
-          <CardList data={deviceList} type="devices" />
-        </div>
+      <div className="section">
+        {status === "fetched" && (
+          <div className="container">
+            {data && (
+              <p className="text-center">
+                There are <span className="font-bold">{data.length || 0}</span>{" "}
+                devices on this page
+              </p>
+            )}
+
+            <CardList data={data} type="devices" />
+          </div>
+        )}
+
+        {status === "error" && <Error msg={error} />}
       </div>
     </motion.section>
   );
