@@ -5,9 +5,11 @@ $colors: (
   dark: #333,
   green: #219653,
   grey: #4a4a4a,
+  light-blue: rgba(45, 156, 219, 0.2),
   light-grey: #eee,
   red: #eb5757,
   white: #fff,
+  yellow: #f7c82e,
 );
 
 $font-families: (
@@ -59,3 +61,6 @@ $device-sizes: (
 );
 
 $sides: (top, bottom, left, right);
+$border-color: rgba(#2d9cdb, 0.3);
+$drop-shadow: 0px 4px 4px rgba(45, 156, 219, 0.1);
+$drop-shadow-active: 0px 5px 5px rgba(45, 156, 219, 0.2);

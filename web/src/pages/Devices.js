@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ANIMATION_DEFAULTS } from "utility/constants";
+import CardList from "components/CardList";
 
 const Devices = () => {
   return (
@@ -14,6 +15,8 @@ const Devices = () => {
       <div className="section">
         <div className="container">
           <p className="text-center">There are 20 devices on this page</p>
+
+          <CardList />
         </div>
       </div>
     </motion.section>

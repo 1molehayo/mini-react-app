@@ -1,0 +1,19 @@
+.badge {
+  @include font-size(small);
+  @include font-weight(medium);
+  display: inline-block;
+  border-radius: 4px;
+  padding: 0.4rem 1rem;
+  text-align: center;
+  text-transform: uppercase;
+
+  &--active {
+    background-color: rgba($color: color(green), $alpha: 0.3);
+    color: darken($color: color(green), $amount: 20%);
+  }
+
+  &--upcoming {
+    background-color: rgba($color: color(yellow), $alpha: 0.3);
+    color: darken($color: color(yellow), $amount: 20%);
+  }
+}
