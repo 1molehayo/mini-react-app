@@ -7,21 +7,8 @@
   background: color(ash);
 
   &__body {
-    min-height: 70vh;
+    min-height: calc(100vh - 150px);
+    padding-top: 3rem;
     padding-bottom: 5rem;
-
-    @include respond(medium) {
-      min-height: 80vh;
-    }
   }
-}
-
-.page-enter-active,
-.page-leave-active {
-  transition: opacity 0.5s;
-}
-
-.page-enter,
-.page-leave-to {
-  opacity: 0;
 }

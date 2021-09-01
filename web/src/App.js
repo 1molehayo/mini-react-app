@@ -8,7 +8,6 @@ import {
 import { PageLayout } from "layouts";
 import PageNavigationListener from "services/PageNavigationListener";
 import { AnimatePresence } from "framer-motion";
-import { Loader } from "components";
 
 const Devices = lazy(() => import("pages/Devices"));
 const Users = lazy(() => import("pages/Users"));
@@ -27,8 +26,8 @@ const App = () => {
           <Route
             path="/devices"
             render={(routeProps) => (
-              <Suspense fallback={<Loader />}>
-                <AnimatePresence>
+              <Suspense fallback={null}>
+                <AnimatePresence exitBeforeEnter>
                   <Devices {...routeProps} />
                 </AnimatePresence>
               </Suspense>
@@ -39,8 +38,8 @@ const App = () => {
             exact
             path="/users"
             render={(routeProps) => (
-              <Suspense fallback={<Loader />}>
-                <AnimatePresence>
+              <Suspense fallback={null}>
+                <AnimatePresence exitBeforeEnter>
                   <Users {...routeProps} />
                 </AnimatePresence>
               </Suspense>

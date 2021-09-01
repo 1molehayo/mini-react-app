@@ -1,13 +1,22 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { ANIMATION_DEFAULTS } from "utility/constants";
 
 const Users = () => {
   return (
-    <section className="section">
-      <div className="container">
-        <h3>Users</h3>
-        <p>This is the users page</p>
+    <motion.section
+      exit="out"
+      initial="out"
+      animate="in"
+      variants={ANIMATION_DEFAULTS.pageTransition}
+      transition={ANIMATION_DEFAULTS.duration}
+    >
+      <div className="section">
+        <div className="container">
+          <p className="text-center">There are 20 users on this page</p>
+        </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

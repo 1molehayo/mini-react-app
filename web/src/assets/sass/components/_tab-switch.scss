@@ -1,0 +1,26 @@
+.tab-switch {
+  display: inline-flex;
+  justify-content: center;
+  border: 1px solid rgba(45, 156, 219, 0.3);
+  border-radius: 20px;
+  margin: 2rem 0 3rem;
+  background-color: rgba($color: color(blue), $alpha: 0.2);
+
+  &__link {
+    @include link;
+    @include font-family(montserrat);
+    @include font-weight(bold);
+    border-radius: 20px;
+    padding: 0.8rem 2rem;
+    color: darken($color: color(blue), $amount: 20%);
+    transition: all 0.3s ease;
+
+    &.active {
+      background-color: color(white);
+    }
+  }
+
+  &__wrapper {
+    text-align: center;
+  }
+}
