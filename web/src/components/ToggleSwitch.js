@@ -12,6 +12,7 @@ export default function ToggleSwitch({ id, isActive }) {
         id={`switch-${id}`}
         onChange={toggleCheckbox}
         checked={open}
+        data-testid="switch-id"
       />
       <label htmlFor={`switch-${id}`}>Toggle</label>
     </div>

@@ -16,8 +16,7 @@ const Devices = () => {
       variants={ANIMATION_DEFAULTS.pageTransition}
       transition={ANIMATION_DEFAULTS.duration}
     >
-      {/* {status === "fetching" && <Loader />} */}
-      <Loader />
+      {status === "fetching" && <Loader />}
 
       <div className="section">
         {status === "fetched" && (
