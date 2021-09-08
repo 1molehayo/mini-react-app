@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { ToggleSwitch } from "./ToggleSwitch";
+import ToggleSwitch from "./ToggleSwitch";
 import { formatDateRange } from "utility";
 import classnames from "classnames";
 
@@ -18,7 +18,9 @@ export default function CardList({ data, type }) {
 
                 <div className="card__details">
                   <div>
-                    <h4 className="mb-0">{item?.attributes.name}</h4>
+                    <h4 className="mb-0" data-testid={`${type}-name-${index}`}>
+                      {item?.attributes.name}
+                    </h4>
 
                     <p className="card__sub-heading">
                       {type === "devices"
